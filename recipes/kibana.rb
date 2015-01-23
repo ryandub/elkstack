@@ -52,12 +52,12 @@ kibana_install 'kibana' do
   action :create
 end
 
-template "#{node['kibana']['install_dir']}/current/config.js" do
-  source node['kibana']['config_template']
-  cookbook node['kibana']['config_cookbook']
-  mode '0750'
-  user kibana_user
-end
+#template "#{node['kibana']['install_dir']}/current/config.js" do
+#  source node['kibana']['config_template']
+#  cookbook node['kibana']['config_cookbook']
+#  mode '0750'
+#  user kibana_user
+#end
 
 link "#{node['kibana']['install_dir']}/current/app/dashboards/default.json" do
   to 'logstash.json'
